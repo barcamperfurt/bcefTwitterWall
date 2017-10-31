@@ -1,0 +1,20 @@
+{
+  "name": "bceftwitterwall",
+  "version": "1.0.0",
+  "description": "bcef Twitter wall",
+  "main": "server.js",
+  "scripts": {
+    "start": "server.js"
+  },
+  "author": "Rene Hennig <rene.hennig@my-united.net>, Peter Willert",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "hbs": "^4.0.1",
+    "method-override": "^2.3.10",
+    "mtwitter": "^1.6.4",
+    "ntwitter": "^0.5.0",
+    "socket.io": "^2.0.4"
+  },
+  "engines": { "node": "v8.1.2" }
+}

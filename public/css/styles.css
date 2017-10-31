@@ -1,0 +1,82 @@
+body {background-color: #7a2541;}
+
+.tweet-list {
+    overflow: hidden;
+    list-style-type: none;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+.tweet-list li {
+    float: left;
+    width: 200px;
+    margin: 3px 7px 7px 3px;
+    position: relative;
+}
+.tweet-list .tweet-content{
+    background: white;
+    padding: 10px;
+    height: 130px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.tweet-list .tweet-author{
+    overflow: hidden;
+    margin: 15px 10px 10px 0;
+}
+
+.tweet-list .tweet-author:before {
+    content: "";
+    border-color: #ffffff transparent transparent transparent;
+    border-style: solid;
+    border-width: 10px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: 55px;
+    left: 15px;
+}
+
+.tweet-list .tweet-author:after{
+    content: "";
+    border-color: #fff transparent transparent transparent;
+    border-style: solid;
+    border-width: 10px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: 58px;
+    left: 15px;
+}
+
+.tweet-list .tweet-author img{
+    float: left;
+    margin-right: 10px;
+    border-radius: 24px;
+}
+
+.tweet-list .tweet-author a{
+    font-weight: bold;
+    color: #999;
+}
+
+.sponsorpanel {
+    display: none;
+}
+@media (min-width: 1222px) {
+.sponsorpanel {
+    display: block;
+    border-radius: 12px 12px 12px 12px;
+    margin-left: 0;
+    padding: 10px;
+    text-align: center;
+    width: 270px;
+    float: right;
+    background: white;
+}
+
+.sponsorpanel .stufe1 img {width: 80%;}
+.sponsorpanel .stufe2 img {width: 70%}
+.sponsorpanel .stufe3 img {width: 60%}
+}
