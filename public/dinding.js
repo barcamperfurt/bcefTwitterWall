@@ -1,3 +1,17 @@
+function getTweet(data) {
+	return (
+		'<div class="tweet-author"><img style="height: 48px; width: 48px;" src="' +
+		data.user.profile_image_url +
+		'" /></div><div class="tweet-content"><div class="tweet-author-link"><a target="_blank" href="http://twitter.com/' +
+		data.user.screen_name +
+		'">@' +
+		data.user.screen_name +
+		'</a></div>' +
+		data.text +
+		'</div>'
+	);
+}
+
 (function() {
 	if (window.dinding === null) window.dinding = {};
 
@@ -31,19 +45,8 @@
 	dinding.socket.on('tweet', function(data) {
 		//dinding.twCount();
 		if (lastTweet == data.text && lastUser == data.user.screen_name) {
-			console.log('double');
 			$('<li></li>')
-				.html(
-					'<div class="tweet-content">' +
-						data.text +
-						'</div><div class="tweet-author"><img style="height: 48px; width: 48px;" src="' +
-						data.user.profile_image_url +
-						'" /><a target="_blank" href="http://twitter.com/' +
-						data.user.screen_name +
-						'">' +
-						data.user.screen_name +
-						'</a></div>'
-				)
+				.html(getTweet(data))
 				.prependTo('#dinding')
 				.css({ opacity: 0 })
 				.slideDown('slow')
@@ -60,17 +63,7 @@
 		//dinding.twCount();
 
 		$('<li></li>')
-			.html(
-				'<div class="tweet-author"><img style="height: 48px; width: 48px;" src="' +
-					data.user.profile_image_url +
-					'" /></div><div class="tweet-content"><div class="tweet-author-link"><a target="_blank" href="http://twitter.com/' +
-					data.user.screen_name +
-					'">@' +
-					data.user.screen_name +
-					'</a></div>' +
-					data.text +
-					'</div>'
-			)
+			.html(getTweet(data))
 			.prependTo('#dinding')
 			.css({ opacity: 0 })
 			.slideDown('slow')
